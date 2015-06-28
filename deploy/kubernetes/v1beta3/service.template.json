@@ -1,0 +1,28 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1beta3",
+  "metadata": {
+    "name": "__serviceName__",
+    "labels": {
+      "name": "__serviceName__",
+      "major": "__major__"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "name": "__publicPortName__",
+        "port": __publicPort__,
+        "targetPort": "__privatePortName__",
+        "protocol": "TCP"
+      }
+    ],
+    "selector": {
+      "name": "__rcName__",
+      "major": "__major__",
+      "minor": "__minor__",
+      "build": "__build__"
+    },
+    "createExternalLoadBalancer": true
+  }
+}
