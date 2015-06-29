@@ -69,13 +69,6 @@
                 "readOnly": true,
                 "mountPath": "/etc/secrets"
               }
-            ],
-            "volumeMounts": [
-              {
-                "name": "secrets",
-                "readOnly": "true",
-                "mountPath": "/etc/secrets"
-              }
             ]
           }
         ]
