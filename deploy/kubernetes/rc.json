@@ -2,30 +2,30 @@
   "kind": "ReplicationController",
   "apiVersion": "v1beta3",
   "metadata": {
-    "name": "__rcName__",
+    "name": "ws-front",
     "labels": {
-      "name": "__rcName__",
-      "major": "__major__",
-      "minor": "__minor__",
-      "build": "__build__"
+      "name": "ws-front",
+      "major": "0",
+      "minor": "0",
+      "build": "13"
     }
   },
   "spec": {
-    "replicas": __replicas__,
+    "replicas": 1,
     "selector": {
-      "name": "__rcName__",
-      "major": "__major__",
-      "minor": "__minor__",
-      "build": "__build__"
+      "name": "ws-front",
+      "major": "0",
+      "minor": "0",
+      "build": "13"
     },
     "template": {
       "metadata": {
-        "name": "__rcName__",
+        "name": "ws-front",
         "labels": {
-          "name": "__rcName__",
-          "major": "__major__",
-          "minor": "__minor__",
-          "build": "__build__"
+          "name": "ws-front",
+          "major": "0",
+          "minor": "0",
+          "build": "13"
         }
       },
       "spec": {
@@ -34,23 +34,23 @@
             "secret": {
               "secretName": "site-ssl-secret"
             }
-          }],
+        }],
         "containers": [
           {
-            "name": "__rcName__",
-            "image": "__image__",
+            "name": "ws-front",
+            "image": "gcr.io/epsilon-cloud-rnd/ws-front:0.0.13",
             "command": [
               "/bin/bash",
               "/usr/src/start.sh"
             ],
             "ports": [
                 {
-                  "name": "__privatePortName1__",
-                  "containerPort": __privatePort1__
+                  "name": "ws-front-http",
+                  "containerPort": 80
                 },
                 {
-                  "name": "__privatePortName2__",
-                  "containerPort": __privatePort2__
+                  "name": "ws-front-https",
+                  "containerPort": 443
                 }
             ],
             "env": [

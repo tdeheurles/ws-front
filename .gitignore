@@ -1,1 +1,2 @@
 build/container
+deploy/kubernetes/v1beta3/secret_ssl.json

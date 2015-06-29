@@ -1,14 +1,14 @@
 # from => https://github.com/GoogleCloudPlatform/nginx-ssl-proxy/blob/master/start.sh
 
-# # Env says we're using SSL
-# if [ -n "${ENABLE_SSL+1}" ] && [ "${ENABLE_SSL,,}" = "true" ]; then
-#   echo "Enabling SSL..."
-#   cp /usr/src/site_ssl.conf /etc/nginx/conf.d/proxy.conf
-# else
-# No SSL
-cp /usr/src/site_nossl.conf /etc/nginx/conf.d/proxy.conf
-# fi
-#
+# Env says we're using SSL
+if [ -n "${ENABLE_SSL+1}" ] && [ "${ENABLE_SSL,,}" = "true" ]; then
+  echo "Enabling SSL..."
+  cp /usr/src/site_ssl.conf /etc/nginx/conf.d/site.conf
+else
+  #No SSL
+  cp /usr/src/site_nossl.conf /etc/nginx/conf.d/site.conf
+fi
+
 # # If an htpasswd file is provided, download and configure nginx
 # if [ -n "${ENABLE_BASIC_AUTH+1}" ] && [ "${ENABLE_BASIC_AUTH,,}" = "true" ]; then
 #   echo "Enabling basic auth..."
