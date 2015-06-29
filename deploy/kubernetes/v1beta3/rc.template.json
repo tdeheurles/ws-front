@@ -35,7 +35,7 @@
             "image": "__image__",
             "command": [
               "/bin/bash",
-              "/usr/bin/start.sh"
+              "/usr/src/start.sh"
             ],
             "ports": [
                 {
