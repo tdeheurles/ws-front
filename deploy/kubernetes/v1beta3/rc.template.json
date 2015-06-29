@@ -33,6 +33,10 @@
           {
             "name": "__rcName__",
             "image": "__image__",
+            "command": [
+              "/bin/bash",
+              "/usr/bin/start.sh"
+            ],
             "ports": [
                 {
                   "name": "__privatePortName__",
