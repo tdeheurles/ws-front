@@ -1,10 +1,15 @@
+# From => https://github.com/GoogleCloudPlatform/nginx-ssl-proxy/blob/master/Dockerfile
 FROM        nginx:latest
 
 MAINTAINER  tdeheurles@gmail.com
 
-COPY        index.html   /www/
-COPY        nginx.conf  /etc/nginx/
+RUN         rm /etc/nginx/conf.d/*.conf
 
-EXPOSE      __SERVICEPORT__
+WORKDIR     /usr/src
 
-CMD         nginx
+COPY        index.html    /www/
+COPY        start.sh      /usr/src/
+COPY        nginx.conf    /etc/nginx/
+COPY        site*.conf    /usr/src/
+
+ENTRYPOINT  ./start.sh

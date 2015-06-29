@@ -1,5 +1,4 @@
 #! /bin/bash
-
 . ./build/release.cfg
 
 k8s_api_version="v1beta3"
@@ -33,3 +32,5 @@ sed -i "s/__privatePortName__/$servicename/g" $servicefile
 sed -i "s/__publicPortName__/$servicename/g" $servicefile
 sed -i "s/__publicPort__/$serviceport/g" $servicefile
 sed -i "s/__rcName__/$rcname/g" $servicefile
+
+echo "Manifests generated"
