@@ -29,6 +29,12 @@
         }
       },
       "spec": {
+        "volumes": [{
+            "name": "secrets",
+            "secret": {
+              "secretName": "site-ssl-secret"
+            }
+          }],
         "containers": [
           {
             "name": "__rcName__",
@@ -39,9 +45,38 @@
             ],
             "ports": [
                 {
-                  "name": "__privatePortName__",
-                  "containerPort": __privatePort__
+                  "name": "__privatePortName1__",
+                  "containerPort": __privatePort1__
+                },
+                {
+                  "name": "__privatePortName2__",
+                  "containerPort": __privatePort2__
                 }
+            ],
+            "env": [
+              {
+                "name": "SERVICE_HOST_ENV_NAME",
+                "value": "JENKINS_SERVICE_HOST"
+              },
+              {
+                "name": "SERVICE_PORT_ENV_NAME",
+                "value": "JENKINS_SERVICE_PORT_UI"
+              },
+              {
+                "name": "ENABLE_SSL",
+                "value": "true"
+              },
+              {
+                "name": "ENABLE_BASIC_AUTH",
+                "value": "true"
+              }
+            ],
+            "volumeMounts": [
+              {
+                "name": "secrets",
+                "readOnly": "true",
+                "mountPath": "/etc/secrets"
+              }
             ]
           }
         ]
