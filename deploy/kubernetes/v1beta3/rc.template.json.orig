@@ -55,6 +55,17 @@
             ],
             "env": [
               {
+<<<<<<< HEAD
+=======
+                "name": "SERVICE_HOST_ENV_NAME",
+                "value": "JENKINS_SERVICE_HOST"
+              },
+              {
+                "name": "SERVICE_PORT_ENV_NAME",
+                "value": "JENKINS_SERVICE_PORT_UI"
+              },
+              {
+>>>>>>> 6ba9a30bdf734a81201f32ba8093336da5bbcf8f
                 "name": "ENABLE_SSL",
                 "value": "true"
               },
@@ -66,15 +77,11 @@
             "volumeMounts": [
               {
                 "name": "secrets",
+<<<<<<< HEAD
                 "readOnly": true,
-                "mountPath": "/etc/secrets"
-                "value": "true"
-              }
-            ],
-            "volumeMounts": [
-              {
-                "name": "secrets",
+=======
                 "readOnly": "true",
+>>>>>>> 6ba9a30bdf734a81201f32ba8093336da5bbcf8f
                 "mountPath": "/etc/secrets"
               }
             ]
