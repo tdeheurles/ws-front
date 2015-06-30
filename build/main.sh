@@ -38,4 +38,4 @@ fi
 deployPath=./deploy/kubernetes
 rm $deployPath/*.json 2&>/dev/null
 rm $deployPath/*.yml 2&>/dev/null
-$deployPath/createManifests.sh $artifact_tag
+$deployPath/createManifests.sh $artifact_tag $BUILD_NUMBER

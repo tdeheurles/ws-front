@@ -7,7 +7,7 @@ docker run                                         \
   -v `pwd`:/workspace                              \
   -w /workspace                                    \
   -ti tdeheurles/gcloud-tools /bin/bash -c         \
-  "gsutil -m cp -r gs://epsilon-deployment/$servicename/deploy/kubernetes/*.json ."
+  "gsutil -m cp -r gs://epsilon-deployment/$servicename/deploy/kubernetes/*.$template_extension ."
 
-mv *.json ./deploy/kubernetes/
-mv *.yml ./deploy/kubernetes/
+mv -f *.json ./deploy/kubernetes/
+mv -f *.yml  ./deploy/kubernetes/
