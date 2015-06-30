@@ -1,0 +1,25 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: __serviceName__
+  labels:
+    name: __serviceName__
+    major: "__major__"
+spec:
+  ports:
+    -  name: __publicPortName1__
+       port: __publicPort1__
+       targetPort: __privatePortName1__
+       protocol: TCP
+    -  name: __publicPortName2__
+       port: __publicPort2__
+       targetPort: __privatePortName2__
+       protocol: TCP
+  selector:
+    name: __rcName__
+    major: "__major__"
+    minor: "__minor__"
+    build: "__build__"
+  clusterIP: ''
+  type: LoadBalancer
+  sessionAffinity: ClientIP

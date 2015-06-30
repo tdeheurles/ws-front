@@ -1,4 +1,4 @@
-. ./build/release.cfg
+. ./config/release.cfg
 
 docker run                                         \
   --rm                                             \
@@ -10,3 +10,4 @@ docker run                                         \
   "gsutil -m cp -r gs://epsilon-deployment/$servicename/deploy/kubernetes/*.json ."
 
 mv *.json ./deploy/kubernetes/
+mv *.yml ./deploy/kubernetes/
