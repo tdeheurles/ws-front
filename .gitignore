@@ -1,4 +1,4 @@
 build/container
-secret_ssl.json
+secret_ssl.*
 config/localbuild.cfg
 build/localbuildnumber.cfg
